@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">PF_inter</string>
+    <string name="titulo">Titulo</string>
+    <string name="notas">NOTAS</string>
+    <string name="logo">logo</string>
+    <string name="bienvenid">BIENVENID@ :)</string>
+    <string name="login">~LOGIN~</string>
+    <string name="usuario">Usuario</string>
+    <string name="constrase_a">Constraseña</string>
+    <string name="ingresar">Ingresar</string>
 </resources>
