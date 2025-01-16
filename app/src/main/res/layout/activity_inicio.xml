@@ -8,60 +8,76 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".Inicio"
+    android:background="@color/verde"
     >
 
+    <ImageView
+        android:layout_width="190dp"
+        android:layout_height="190dp"
+        android:src="@drawable/logo"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        />
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="180dp">
+        android:text="BIENVENID@ :)"
+        android:textSize="30sp"
+        android:layout_gravity="center"
+        android:textColor="@color/black"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:layout_marginTop="70dp"
+        />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="~LOGIN~"
+        android:textSize="30sp"
+        android:layout_gravity="center"
+        android:textColor="@color/black"
+        android:fontFamily="sans-serif-smallcaps"
+        />
         <EditText
             android:id="@+id/ET_user"
-            android:layout_width="wrap_content"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="150dp"
-            android:layout_gravity="center"
             android:hint="Usuario"
-            android:textSize="30sp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="80dp">
+            android:textSize="30sp"
+            android:background="@drawable/fondo_redondeado"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            />
 
         <EditText
             android:id="@+id/ET_pwd"
-            android:layout_width="wrap_content"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="135dp"
-            android:layout_gravity="center"
             android:inputType="numberPassword"
             android:hint="Constraseña"
-            android:textSize="30sp" />
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="80dp">
+            android:textSize="30sp"
+            android:background="@drawable/fondo_redondeado"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            />
 
         <Button
             android:id="@+id/btn_inicio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="140dp"
             android:text="Ingresar"
             android:textSize="30sp"
             android:textColor="@color/black"
-            android:backgroundTint="@color/Azul"/>
-    </LinearLayout>
+            android:backgroundTint="@color/beige"
+            android:layout_gravity="center"
+            android:layout_marginTop="70dp"
+            />
 
 
 </LinearLayout>
