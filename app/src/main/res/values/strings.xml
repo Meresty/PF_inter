@@ -8,4 +8,6 @@
     <string name="usuario">Usuario</string>
     <string name="constrase_a">Constraseña</string>
     <string name="ingresar">Ingresar</string>
+    <string name="titulo_">Titulo</string>
+    <string name="contenido">Contenido</string>
 </resources>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".contenidoNota"
+    android:orientation="vertical"
+    android:background="@color/gris"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/verde"
+        >
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/ETnotaTitulo"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@color/amarillo"
+        android:hint="@string/titulo_"
+        android:textSize="25sp"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:inputType="text"
+        />
+    <EditText
+        android:inputType="text"
+        android:id="@+id/ETnotaContenido"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/gris"
+        android:hint="@string/contenido"
+        android:textSize="25sp"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        />
+
+
+</LinearLayout>
