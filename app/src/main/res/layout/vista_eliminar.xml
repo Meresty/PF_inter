@@ -4,7 +4,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="150dp"
-    android:layout_margin="18dp"
+    android:layout_margin="20dp"
     android:background="@drawable/fondo_notas">
 
     <androidx.cardview.widget.CardView
@@ -12,28 +12,32 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_marginRight="2dp"
-        android:layout_marginLeft="2dp">
+        android:layout_marginLeft="2dp"
+        android:layout_marginBottom="10dp"
+
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/amarillo"
             android:orientation="horizontal">
 
             <CheckBox
-                android:id="@+id/checkbox"
+                android:id="@+id/ccheckbox"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-            </CheckBox>
+                android:layout_height="wrap_content"/>
 
             <TextView
-                android:id="@+id/holderelim"
+                android:id="@+id/txt_rv_eliminar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Titulo"
                 android:textColor="@color/black"
-                android:textStyle="bold"
                 android:textSize="25sp"
-                android:text="Hola">
-            </TextView>
+                android:textStyle="bold"/>
 
         </LinearLayout>
 

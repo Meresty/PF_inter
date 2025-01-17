@@ -6,24 +6,36 @@ import android.view.Menu;
 import android.view.MenuItem;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import adaptadores.adaptadorVer;
 
 public class MainActivity extends AppCompatActivity {
+    RecyclerView rv;
+    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        rv =findViewById(R.id.recyclerView);
+        setSupportActionBar(toolbar);
+
+        adaptadorVer av = new adaptadorVer(this);
+        av.context=this;
+        LinearLayoutManager llm = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false);
+        rv.setAdapter(av);
+        rv.setLayoutManager(llm);
+
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-
         getMenuInflater().inflate(R.menu.menu, menu);
-
 
         for (int i = 0; i < menu.size(); i++) {
             MenuItem item = menu.getItem(i);

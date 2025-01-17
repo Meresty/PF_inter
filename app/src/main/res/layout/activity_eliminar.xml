@@ -28,10 +28,11 @@
         android:backgroundTint="@color/beige"
         android:textColor="@color/black"
         android:textSize="20sp"
+        android:onClick="Eliminar_Boton"
         />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_eliminar"
+        android:id="@+id/recyclerViewEliminar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
