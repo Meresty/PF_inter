@@ -12,5 +12,9 @@
     <string name="contenido">Contenido</string>
     <string name="guardar">Guardar</string>
     <string name="btelimnar">Eliminar</string>
+    <string name="MenuInicio">Inicio</string>
+    <string name="MenuEliminar">Eliminar</string>
+    <string name="MenuAgregar">Agregar</string>
+
 
 </resources>
