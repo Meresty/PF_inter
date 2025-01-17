@@ -1,5 +1,6 @@
 package com.example.pf_inter;
 
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -17,7 +18,6 @@ public class Eliminar extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_eliminar);
 
-
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -30,15 +30,18 @@ public class Eliminar extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-
         getMenuInflater().inflate(R.menu.menu, menu);
+
+        for (int i = 0; i < menu.size(); i++) {
+            MenuItem item = menu.getItem(i);
+            item.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
+        }
 
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-
         if (item.getItemId() == R.id.ITInicio) {
 
             Intent inicioIntent = new Intent(this, MainActivity.class);
@@ -51,11 +54,6 @@ public class Eliminar extends AppCompatActivity {
 
             Intent agregarIntent = new Intent(this, contenidoNota.class);
             startActivity(agregarIntent);
-            return true;
-        } else if (item.getItemId() == R.id.ITModificar) {
-
-            Intent modificarIntent = new Intent(this, Modificar.class);
-            startActivity(modificarIntent);
             return true;
         }
 

@@ -51,15 +51,16 @@
                 android:fontFamily="sans-serif-condensed-medium"
                 android:text="Titulo"
                 android:textColor="@color/black"
-                android:textSize="27sp" />
+                android:textSize="34sp" />
 
             <TextView
                 android:id="@+id/Contenido_card"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-condensed-medium"
+                android:fontFamily="sans-serif-condensed-light"
                 android:text="Contenido"
                 android:textColor="@color/black"
+                android:layout_marginTop="10dp"
                 android:textSize="27sp" />
 
         </LinearLayout>

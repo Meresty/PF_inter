@@ -21,6 +21,7 @@ public class contenidoNota extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contenido_nota);
 
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -28,19 +29,17 @@ public class contenidoNota extends AppCompatActivity {
         etNotaContenido = findViewById(R.id.EtnotaContenido);
         btnGuardar = findViewById(R.id.btnGuardar);
 
-
         btnGuardar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String titulo = etNotaTitulo.getText().toString().trim();
                 String contenido = etNotaContenido.getText().toString().trim();
 
-
                 if (titulo.isEmpty() || contenido.isEmpty()) {
                     Toast.makeText(contenidoNota.this, "Por favor, complete todos los campos", Toast.LENGTH_SHORT).show();
                 } else {
-
                     Toast.makeText(contenidoNota.this, "Nota guardada", Toast.LENGTH_SHORT).show();
+
 
                     etNotaTitulo.setText("");
                     etNotaContenido.setText("");
@@ -51,15 +50,19 @@ public class contenidoNota extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-
         getMenuInflater().inflate(R.menu.menu, menu);
+
+
+        for (int i = 0; i < menu.size(); i++) {
+            MenuItem item = menu.getItem(i);
+            item.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
+        }
 
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-
         if (item.getItemId() == R.id.ITInicio) {
 
             Intent inicioIntent = new Intent(this, MainActivity.class);
@@ -71,13 +74,7 @@ public class contenidoNota extends AppCompatActivity {
             startActivity(eliminarIntent);
             return true;
         } else if (item.getItemId() == R.id.ITAgregar) {
-
             Toast.makeText(this, "Opción Agregar seleccionada", Toast.LENGTH_SHORT).show();
-            return true;
-        } else if (item.getItemId() == R.id.ITModificar) {
-
-            Intent modificarIntent = new Intent(this, Modificar.class);
-            startActivity(modificarIntent);
             return true;
         }
 
