@@ -18,18 +18,7 @@
             layout="@layout/toolbar" />
     </LinearLayout>
 
-    <Button
-        android:id="@+id/btn_eliminar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="5dp"
-        android:text="@string/btelimnar"
-        android:backgroundTint="@color/beige"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:onClick="btn_Eliminar"
-        />
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewEliminar"

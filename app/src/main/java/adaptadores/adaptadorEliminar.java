@@ -5,6 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -34,23 +35,19 @@ public class adaptadorEliminar extends RecyclerView.Adapter<adaptadorEliminar.Mi
 
 
     @Override
-    public void onBindViewHolder(@NonNull adaptadorEliminar.Mielimina mielimina, int i) {
-        final int pos = i;
+    public void onBindViewHolder(@NonNull Mielimina holder, int position) {
+        nota notaActual = info.lista.get(position);
 
-        nota notas = info.lista.get(pos);
-        mielimina.titulo.setText(notas.getTitulo());
-        mielimina.checkBoxx.setChecked(false);
+        holder.titulo.setText(notaActual.getTitulo());
+        holder.checkBoxx.setChecked(false);
 
-        mielimina.checkBoxx.setOnClickListener(new View.OnClickListener() {
-            @Override
+        holder.checkBoxx.setOnClickListener(view -> {
+            if (holder.checkBoxx.isChecked()) {
 
-            public void onClick(View view) {
-                if(((CheckBox)view).isChecked()){
-                    info.listaEliminar.add(info.lista.get(pos));
-                }
-                else{
-                    info.listaEliminar.remove(info.lista.get(pos));
-                }
+                info.lista.remove(position);
+                notifyItemRemoved(position);
+                notifyItemRangeChanged(position, info.lista.size());
+                Toast.makeText(context, "Elemento eliminado: " + notaActual.getTitulo(), Toast.LENGTH_SHORT).show();
             }
         });
     }
