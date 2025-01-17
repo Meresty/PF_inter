@@ -18,11 +18,9 @@ public class contenidoNota extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contenido_nota);
 
-
         etNotaTitulo = findViewById(R.id.ETnotaTitulo);
         etNotaContenido = findViewById(R.id.ETnotaContenido);
         btnGuardar = findViewById(R.id.btnGuardar);
-
 
         btnGuardar.setOnClickListener(new View.OnClickListener() {
             @Override
