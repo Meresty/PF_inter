@@ -12,9 +12,12 @@
     <string name="contenido">Contenido</string>
     <string name="guardar">Guardar</string>
     <string name="btelimnar">Eliminar</string>
+    <string name="MenuModificar">Modificar</string>
     <string name="MenuInicio">Inicio</string>
     <string name="MenuEliminar">Eliminar</string>
     <string name="MenuAgregar">Agregar</string>
-
+    <string name="ModTitulo">Titulo</string>
+    <string name="ModContenido">Contenido</string>
+    <string name="BtnModificar">Modificar</string>
 
 </resources>

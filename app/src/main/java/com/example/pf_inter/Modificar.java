@@ -10,16 +10,17 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class Eliminar extends AppCompatActivity {
+public class Modificar extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_eliminar);
+        setContentView(R.layout.activity_modificar);
 
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -46,6 +47,8 @@ public class Eliminar extends AppCompatActivity {
             return true;
         } else if (item.getItemId() == R.id.ITEliminar) {
 
+            Intent eliminarIntent = new Intent(this, Eliminar.class);
+            startActivity(eliminarIntent);
             return true;
         } else if (item.getItemId() == R.id.ITAgregar) {
 
