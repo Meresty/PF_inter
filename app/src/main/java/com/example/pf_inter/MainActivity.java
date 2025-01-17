@@ -41,7 +41,6 @@ public class MainActivity extends AppCompatActivity {
             MenuItem item = menu.getItem(i);
             item.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
         }
-
         return true;
     }
 
