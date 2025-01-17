@@ -12,6 +12,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.pf_inter.Eliminar;
 import com.example.pf_inter.R;
 
+import java.util.List;
+
 import POJO.nota;
 import global.info;
 
@@ -29,6 +31,7 @@ public class adaptadorEliminar extends RecyclerView.Adapter<adaptadorEliminar.Mi
         Mielimina obj = new Mielimina(v);
         return obj;
     }
+
 
     @Override
     public void onBindViewHolder(@NonNull adaptadorEliminar.Mielimina mielimina, int i) {
