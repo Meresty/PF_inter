@@ -5,7 +5,7 @@ public class nota {
     public String Titulo;
     public String Contenido;
 
-
+    
     public String getTitulo() {
         return Titulo;
     }
