@@ -39,6 +39,10 @@ public class contenidoNota extends AppCompatActivity {
                     Toast.makeText(contenidoNota.this, "Por favor, complete todos los campos", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(contenidoNota.this, "Nota guardada", Toast.LENGTH_SHORT).show();
+
+
+                    etNotaTitulo.setText("");
+                    etNotaContenido.setText("");
                 }
             }
         });
@@ -46,7 +50,6 @@ public class contenidoNota extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-
         getMenuInflater().inflate(R.menu.menu, menu);
 
 
@@ -66,7 +69,9 @@ public class contenidoNota extends AppCompatActivity {
             startActivity(inicioIntent);
             return true;
         } else if (item.getItemId() == R.id.ITEliminar) {
-            Toast.makeText(this, "Opción Eliminar seleccionada", Toast.LENGTH_SHORT).show();
+
+            Intent eliminarIntent = new Intent(this, Eliminar.class);
+            startActivity(eliminarIntent);
             return true;
         } else if (item.getItemId() == R.id.ITAgregar) {
             Toast.makeText(this, "Opción Agregar seleccionada", Toast.LENGTH_SHORT).show();
