@@ -64,17 +64,13 @@ public class contenidoNota extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
-
-        for (int i = 0; i < menu.size(); i++) {
-            MenuItem item = menu.getItem(i);
-            item.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
-        }
         return true;
     }
 
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+
         if (item.getItemId() == R.id.ITInicio) {
 
             Intent inicioIntent = new Intent(this, MainActivity.class);
@@ -86,10 +82,18 @@ public class contenidoNota extends AppCompatActivity {
             startActivity(eliminarIntent);
             return true;
         } else if (item.getItemId() == R.id.ITAgregar) {
-            Toast.makeText(this, "Opción Agregar seleccionada", Toast.LENGTH_SHORT).show();
+
+            Intent agregarIntent = new Intent(this, contenidoNota.class);
+            startActivity(agregarIntent);
+            return true;
+        } else if (item.getItemId() == R.id.ITModificar) {
+
+            Intent modificarIntent = new Intent(this, Modificar.class);
+            startActivity(modificarIntent);
             return true;
         }
 
         return super.onOptionsItemSelected(item);
     }
+
 }
