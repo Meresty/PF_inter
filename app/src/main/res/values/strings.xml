@@ -10,4 +10,6 @@
     <string name="ingresar">Ingresar</string>
     <string name="titulo_">Titulo</string>
     <string name="contenido">Contenido</string>
+    <string name="guardar">Guardar</string>
+
 </resources>
