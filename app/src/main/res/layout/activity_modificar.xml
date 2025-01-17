@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Modificar">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/verde"
+        >
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/ETTituloModificar"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@color/amarillo"
+        android:hint="@string/titulo"
+        android:textSize="25sp"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:inputType="text"
+        />
+    <EditText
+        android:inputType="text"
+        android:id="@+id/ETnotaModificar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/gris"
+        android:hint="@string/contenido"
+        android:textSize="25sp"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        />
+
+  <LinearLayout
+      android:layout_gravity="center"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal">
+      <Button
+          android:id="@+id/Anterior"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="@string/anterior"
+          android:textColor="@color/black"
+          android:layout_marginEnd="30dp"
+          android:textSize="30dp"
+          android:backgroundTint="@color/amarillo"
+          />
+      <Button
+          android:id="@+id/GuardarMod"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="@string/guardar"
+          android:textSize="25dp"
+          android:backgroundTint="@color/amarillo"
+          android:textColor="@color/black"
+          />
+      <Button
+          android:id="@+id/Siguiente"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="@string/siguiente"
+          android:layout_marginStart="30dp"
+          android:textSize="30dp"
+
+          android:backgroundTint="@color/amarillo"
+          android:textColor="@color/black"
+          />
+
+  </LinearLayout>
+
+
+</LinearLayout>

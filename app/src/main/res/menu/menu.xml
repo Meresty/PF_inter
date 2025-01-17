@@ -4,17 +4,24 @@
 
     <item
         android:id="@+id/ITInicio"
-        android:title="@string/MenuInicio"/>
+        android:title="@string/MenuInicio"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/ITModificar"
+        android:title="@string/modificar"
+        app:showAsAction="never" />
+
     <item
         android:id="@+id/ITEliminar"
         android:title="@string/MenuEliminar"
         app:showAsAction="always"
-        android:icon="@drawable/basurita"/>
+        android:icon="@drawable/basurita" />
 
     <item
         android:id="@+id/ITAgregar"
         android:title="@string/MenuAgregar"
         app:showAsAction="always"
-        android:icon="@drawable/agrega"/>
+        android:icon="@drawable/agrega" />
 
 </menu>
