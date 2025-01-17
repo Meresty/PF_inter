@@ -15,7 +15,13 @@
         android:theme="@style/Theme.PF_inter"
         tools:targetApi="31">
         <activity
+            android:name=".Modificar"
+            android:exported="false" />
+        <activity
             android:name=".cardview"
+            android:exported="false" />
+        <activity
+            android:name=".Eliminar"
             android:exported="false" />
         <activity
             android:name=".contenidoNota"
