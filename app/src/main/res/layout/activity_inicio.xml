@@ -40,44 +40,55 @@
         android:textColor="@color/black"
         android:fontFamily="sans-serif-smallcaps"
         />
-        <EditText
-            android:id="@+id/ET_user"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:hint="@string/usuario"
-            android:textSize="30sp"
-            android:background="@drawable/fondo_redondeado"
-            android:layout_gravity="center"
-            android:layout_marginTop="30dp"
-            android:textColor="@color/black"
-            android:textAlignment="center"
-            />
+    <EditText
+        android:id="@+id/etUsuario"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/usuario"
+        android:textSize="30sp"
+        android:background="@drawable/fondo_redondeado"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/black"
+        android:textAlignment="center"
+        />
 
-        <EditText
-            android:id="@+id/ET_pwd"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:inputType="numberPassword"
-            android:hint="@string/constrase_a"
-            android:textSize="30sp"
-            android:background="@drawable/fondo_redondeado"
-            android:layout_gravity="center"
-            android:layout_marginTop="30dp"
-            android:textColor="@color/black"
-            android:textAlignment="center"
-            />
+    <EditText
+        android:id="@+id/etContraseña"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:inputType="numberPassword"
+        android:hint="@string/constrase_a"
+        android:textSize="30sp"
+        android:background="@drawable/fondo_redondeado"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/black"
+        android:textAlignment="center"
+        />
 
-        <Button
-            android:id="@+id/btn_inicio"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/ingresar"
-            android:textSize="30sp"
-            android:textColor="@color/black"
-            android:backgroundTint="@color/beige"
-            android:layout_gravity="center"
-            android:layout_marginTop="70dp"
-            />
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ingresar"
+        android:textSize="30sp"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/beige"
+        android:layout_gravity="center"
+        android:layout_marginTop="70dp"
 
+        />
+
+    <TextView
+        android:id="@+id/tvResultado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:paddingTop="16dp"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        android:layout_marginTop="10dp"
+        />
 
 </LinearLayout>
