@@ -1,125 +1,109 @@
 package com.example.pf_inter;
 
-import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
+import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
-
-import androidx.appcompat.app.AppCompatActivity;
-
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.Volley;
-
+import android.widget.TextView;
+import okhttp3.*;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
-import java.nio.charset.StandardCharsets;
+import java.io.IOException;
+
 
 public class Inicio extends AppCompatActivity {
-    EditText user, pass;
-    Button ingresar;
-    SharedPreferences archivo;
+    private EditText etUser, etPwd;
+    private Button btnLogin;
+    private TextView tvResultado;
+    private final String URL_API = "http://10.0.2.2/login_BDInt.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_inicio);
 
-        user = findViewById(R.id.ET_user);
-        pass = findViewById(R.id.ET_pwd);
-        ingresar = findViewById(R.id.btn_inicio);
-        archivo = this.getSharedPreferences("sesion", Context.MODE_PRIVATE);
+        etUser = findViewById(R.id.etUsuario);
+        etPwd = findViewById(R.id.etContraseña);
+        btnLogin = findViewById(R.id.btnLogin);
+        tvResultado = findViewById(R.id.tvResultado);
 
-        ingresar.setOnClickListener(new View.OnClickListener() {
+        // 2. Configurar el botón de login
+        btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ingresar();
+                String user = etUser.getText().toString().trim();
+                String pwd = etPwd.getText().toString().trim();
+
+                if (!user.isEmpty() && !pwd.isEmpty()) {
+                    realizarLogin(user, pwd);
+                } else {
+                    tvResultado.setText("Por favor, completa todos los campos.");
+                }
             }
         });
     }
 
-    private void ingresar() {
-        String baseUrl = "http://192.168.100.220/ingreso.php?";
-        String usr;
-        String pwd;
+    private void realizarLogin(String usuario, String pwd) {
+        OkHttpClient client = new OkHttpClient();
 
-        // Obtener los valores de usuario y contraseña
-        usr = user.getText().toString().trim();
-        pwd = pass.getText().toString().trim();
-
-        // Validar campos vacíos
-        if (usr.isEmpty() || pwd.isEmpty()) {
-            Toast.makeText(Inicio.this, "Por favor, ingrese usuario y contraseña.", Toast.LENGTH_SHORT).show();
-            return;
-        }
-
-        // Codificar los valores de usuario y contraseña
+        JSONObject jsonObject = new JSONObject();
         try {
-            usr = URLEncoder.encode(usr, StandardCharsets.UTF_8.toString());
-            pwd = URLEncoder.encode(pwd, StandardCharsets.UTF_8.toString());
-        } catch (UnsupportedEncodingException e) {
-            Toast.makeText(Inicio.this, "Error de codificación: " + e.getMessage(), Toast.LENGTH_SHORT).show();
-            return;
+            jsonObject.put("usuario", usuario);
+            jsonObject.put("contrasena", pwd);
+        } catch (JSONException e) {
+            e.printStackTrace();
         }
 
-        // Construir la URL
-        String url = baseUrl + "usr=" + usr + "&pass=" + pwd;
-        Log.d("RequestURL", "URL: " + url);
+        // 3. Crear RequestBody
+        RequestBody body = RequestBody.create(
+                jsonObject.toString(),
+                MediaType.parse("application/json; charset=utf-8")
+        );
 
-        JsonObjectRequest pet = new JsonObjectRequest(Request.Method.GET, url, null,
-                new Response.Listener<JSONObject>() {
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        try {
-                            // Validar la respuesta del servidor
-                            if (response.has("usr")) {
-                                int userId = response.getInt("usr");
-                                if (userId != -1) {
-                                    // Usuario válido, guardar en SharedPreferences
-                                    Intent i = new Intent(Inicio.this, MainActivity.class);
-                                    SharedPreferences.Editor editor = archivo.edit();
-                                    editor.putInt("id_usuario", userId);
-                                    editor.apply();
-                                    startActivity(i);
-                                    finish();
-                                } else {
-                                    user.setText("");
-                                    pass.setText("");
-                                    Toast.makeText(Inicio.this, "Usuario o contraseña incorrectos", Toast.LENGTH_SHORT).show();
-                                }
+        // 4. Crear Request
+        Request request = new Request.Builder()
+                .url(URL_API)
+                .post(body)
+                .build();
+
+        // 5. Realizar la solicitud
+        client.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+                runOnUiThread(() -> tvResultado.setText("Error: " + e.getMessage()));
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                if (response.isSuccessful()) {
+                    String responseString = response.body().string();
+
+                    try {
+                        JSONObject responseJson = new JSONObject(responseString);
+                        boolean success = responseJson.getBoolean("success");
+                        String message = responseJson.getString("message");
+
+                        runOnUiThread(() -> {
+                            if (success) {
+                                tvResultado.setText("Login exitoso: " + message);
                             } else {
-                                Toast.makeText(Inicio.this, "Respuesta no válida del servidor", Toast.LENGTH_SHORT).show();
-                                Log.e("ServerResponse", "Respuesta inesperada: " + response.toString());
+                                tvResultado.setText("Error: " + message);
                             }
-                        } catch (JSONException e) {
-                            Toast.makeText(Inicio.this, "Error procesando respuesta JSON: " + e.getMessage(), Toast.LENGTH_SHORT).show();
-                            Log.e("JSONError", e.getMessage(), e);
-                        }
+                        });
+                    } catch (JSONException e) {
+                        e.printStackTrace();
                     }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        // Manejar errores de conexión o respuesta
-                        String message = (error.getMessage() != null) ? error.getMessage() : "Error desconocido";
-                        Toast.makeText(Inicio.this, "Error en la conexión: " + message, Toast.LENGTH_SHORT).show();
-                        Log.e("VolleyError", message, error);
-                    }
-                });
-
-        // Enviar la solicitud
-        RequestQueue lanzarPeticion = Volley.newRequestQueue(this);
-        lanzarPeticion.add(pet);
+                } else {
+                    runOnUiThread(() -> tvResultado.setText("Error: " + response.message()));
+                }
+            }
+        });
     }
+
+
 }
