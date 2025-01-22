@@ -31,6 +31,8 @@
 
     <string name="bienvenido">BIENVENID@ :)</string>
     <string name="registro">~Registro~</string>
-
+    <string name="contrasena">~Contraseña~</string>
+    <string name="btnguardarusu">Guardar</string>
+    <string name="btnguardarcontra">Guardar</string>
 
 </resources>
