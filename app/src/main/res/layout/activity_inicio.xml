@@ -12,11 +12,11 @@
     >
 
     <ImageView
-        android:layout_width="190dp"
-        android:layout_height="190dp"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
         android:src="@drawable/logo"
         android:layout_gravity="center"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         />
 
     <TextView
@@ -27,7 +27,7 @@
         android:layout_gravity="center"
         android:textColor="@color/black"
         android:fontFamily="sans-serif-condensed-medium"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         />
 
     <Button
@@ -39,7 +39,7 @@
         android:textColor="@color/white"
         android:backgroundTint="@color/verdeF"
         android:layout_gravity="center"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:layout_marginBottom="30dp"
         />
 
@@ -64,12 +64,13 @@
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="15dp"
         android:background="@drawable/fondo_redondeado"
         android:hint="@string/usuario"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="30sp" />
+
 
     <EditText
         android:id="@+id/etContraseña"
@@ -85,6 +86,20 @@
         android:textAlignment="center"
         />
 
+    <TextView
+        android:id="@+id/CambiarContraseña"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/CambiarContrasena"
+        android:gravity="center"
+        android:paddingTop="1dp"
+        android:textSize="25sp"
+        android:textColor="@color/azul"
+        android:layout_marginTop="20dp"
+        android:clickable="true"
+        android:onClick="CambiarContraseña"
+        />
+
     <Button
         android:id="@+id/btnLogin"
         android:layout_width="wrap_content"
@@ -94,7 +109,8 @@
         android:textColor="@color/black"
         android:backgroundTint="@color/beige"
         android:layout_gravity="center"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="18dp"
+        android:gravity="bottom"
         />
 
     <TextView
@@ -102,10 +118,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text=""
-        android:paddingTop="16dp"
+        android:paddingTop="12dp"
         android:textSize="25sp"
         android:textColor="@color/white"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="8dp"
+        android:layout_gravity="bottom"
         />
 
 </LinearLayout>

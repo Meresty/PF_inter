@@ -123,4 +123,8 @@ public class Inicio extends AppCompatActivity {
     }
 
 
+    public void CambiarContraseña(View view) {
+        Intent intent = new Intent(Inicio.this, Contrasena.class);
+        startActivity(intent);
+    }
 }

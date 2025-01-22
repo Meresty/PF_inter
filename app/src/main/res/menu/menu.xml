@@ -26,4 +26,9 @@
         android:title="@string/modificar"
         app:showAsAction="never" />
 
+    <item
+        android:id="@+id/ITCerrarSesion"
+        android:title="@string/cerrar_sesi_n"
+        app:showAsAction="never" />
+
 </menu>

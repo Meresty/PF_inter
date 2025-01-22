@@ -4,7 +4,7 @@
     <string name="notas">NOTAS</string>
     <string name="logo">logo</string>
     <string name="bienvenid">BIENVENID@ :)</string>
-    <string name="login">~LOGIN~</string>
+    <string name="login">LOGIN</string>
     <string name="usuario">Usuario</string>
     <string name="constrase_a">Constraseña</string>
     <string name="ingresar">Ingresar</string>
@@ -28,12 +28,14 @@
     <string name="anterior">◀</string>
     <string name="siguiente">▶</string>
     <string name="selecciona_la_nota_que_quieras_eliminar">selecciona_la_nota_que_quieras_eliminar</string>
-
+    <string name="cerrar_sesi_n">Cerrar Sesión</string>
     <string name="bienvenido">BIENVENID@ :)</string>
-    <string name="registro">~Registro~</string>
-    <string name="contrasena">~Contraseña~</string>
+    <string name="registro">Registro</string>
+    <string name="contrasena">Contraseña</string>
     <string name="btnguardarusu">Guardar</string>
     <string name="btnguardarcontra">Guardar</string>
     <string name="registrarse">Registrarse</string>
+    <string name="CambiarContrasena">Cambiar_Contraseña</string>
+
 
 </resources>

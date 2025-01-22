@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView rv;
     Toolbar toolbar;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -70,6 +72,11 @@ public class MainActivity extends AppCompatActivity {
         } else if (item.getItemId() == R.id.ITModificar) {
 
             Intent modificarIntent = new Intent(this, Modificar.class);
+            startActivity(modificarIntent);
+            return true;
+        } else if (item.getItemId() == R.id.ITCerrarSesion) {
+
+            Intent modificarIntent = new Intent(this, Inicio.class);
             startActivity(modificarIntent);
             return true;
         }

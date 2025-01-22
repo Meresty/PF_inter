@@ -73,6 +73,11 @@ public class cardview extends AppCompatActivity {
             Intent modificarIntent = new Intent(this, Modificar.class);
             startActivity(modificarIntent);
             return true;
+        } else if (item.getItemId() == R.id.ITCerrarSesion) {
+
+            Intent modificarIntent = new Intent(this, Inicio.class);
+            startActivity(modificarIntent);
+            return true;
         }
 
         return super.onOptionsItemSelected(item);
