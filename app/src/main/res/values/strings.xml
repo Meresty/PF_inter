@@ -28,5 +28,6 @@
     <string name="anterior">◀</string>
     <string name="siguiente">▶</string>
     <string name="selecciona_la_nota_que_quieras_eliminar">Selecciona la nota que quieras eliminar</string>
+    <string name="registrarse">Registrarse</string>
 
 </resources>

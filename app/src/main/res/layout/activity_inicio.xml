@@ -28,8 +28,29 @@
         android:layout_gravity="center"
         android:textColor="@color/black"
         android:fontFamily="sans-serif-condensed-medium"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="20dp"
         />
+
+
+    <Button
+        android:id="@+id/btnRegistro"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="@string/registrarse"
+        android:textSize="30sp"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/verdeF"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="30dp"
+
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/black"/>
+
 
     <TextView
         android:layout_width="wrap_content"
@@ -39,19 +60,20 @@
         android:layout_gravity="center"
         android:textColor="@color/black"
         android:fontFamily="sans-serif-smallcaps"
+        android:layout_marginTop="10"
         />
+
     <EditText
         android:id="@+id/etUsuario"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:hint="@string/usuario"
-        android:textSize="30sp"
-        android:background="@drawable/fondo_redondeado"
         android:layout_gravity="center"
-        android:layout_marginTop="30dp"
-        android:textColor="@color/black"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/fondo_redondeado"
+        android:hint="@string/usuario"
         android:textAlignment="center"
-        />
+        android:textColor="@color/black"
+        android:textSize="30sp" />
 
     <EditText
         android:id="@+id/etContraseña"
@@ -62,7 +84,7 @@
         android:textSize="30sp"
         android:background="@drawable/fondo_redondeado"
         android:layout_gravity="center"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="15dp"
         android:textColor="@color/black"
         android:textAlignment="center"
         />
@@ -76,8 +98,7 @@
         android:textColor="@color/black"
         android:backgroundTint="@color/beige"
         android:layout_gravity="center"
-        android:layout_marginTop="70dp"
-
+        android:layout_marginTop="20dp"
         />
 
     <TextView
