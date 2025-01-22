@@ -36,6 +36,7 @@
     <string name="btnguardarcontra">Guardar</string>
     <string name="registrarse">Registrarse</string>
     <string name="CambiarContrasena">Cambiar_Contraseña</string>
+    <string name="registrarse_">Registrarse</string>
 
 
 </resources>

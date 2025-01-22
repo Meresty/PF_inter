@@ -51,7 +51,7 @@
         android:fontFamily="sans-serif-condensed-medium"
         />
     <EditText
-        android:id="@+id/etUsuario"
+        android:id="@+id/etUsuarioCon"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:hint="@string/usuario"
@@ -64,7 +64,7 @@
         />
 
     <EditText
-        android:id="@+id/etContraseña"
+        android:id="@+id/etContrasenaCon"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:inputType="numberPassword"
@@ -78,7 +78,7 @@
         />
 
     <Button
-        android:id="@+id/btnAct_Cont"
+        android:id="@+id/btnGuardarCon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/btnguardarcontra"
@@ -89,7 +89,7 @@
         android:layout_marginTop="70dp"
         />
     <TextView
-        android:id="@+id/tvResultado"
+        android:id="@+id/tvResultadoCon"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text=""

@@ -29,8 +29,6 @@
 
     </LinearLayout>
 
-
-
     <ImageView
         android:layout_width="190dp"
         android:layout_height="190dp"
@@ -53,7 +51,7 @@
         />
 
     <EditText
-        android:id="@+id/etUsuario"
+        android:id="@+id/etUsuarioRegistro"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:hint="@string/usuario"
@@ -66,7 +64,7 @@
         />
 
     <EditText
-        android:id="@+id/etContraseña"
+        android:id="@+id/etContrasenaRegistro"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:inputType="numberPassword"
@@ -83,21 +81,20 @@
         android:id="@+id/btnRegistro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/btnguardarusu"
+        android:text="@string/registrarse_"
         android:textSize="30sp"
         android:textColor="@color/black"
         android:backgroundTint="@color/beige"
         android:layout_gravity="center"
         android:layout_marginTop="70dp"
         />
+
     <TextView
-        android:id="@+id/tvResultado"
+        android:id="@+id/tvResultadoReg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text=""
         android:paddingTop="16dp"
         android:textSize="16sp" />
-
-
 
 </LinearLayout>
