@@ -27,7 +27,13 @@
     <string name="modificar">Modificar</string>
     <string name="anterior">◀</string>
     <string name="siguiente">▶</string>
-    <string name="selecciona_la_nota_que_quieras_eliminar">Selecciona la nota que quieras eliminar</string>
+    <string name="selecciona_la_nota_que_quieras_eliminar">selecciona_la_nota_que_quieras_eliminar</string>
+
+    <string name="bienvenido">BIENVENID@ :)</string>
+    <string name="registro">~Registro~</string>
+    <string name="contrasena">~Contraseña~</string>
+    <string name="btnguardarusu">Guardar</string>
+    <string name="btnguardarcontra">Guardar</string>
     <string name="registrarse">Registrarse</string>
 
 </resources>

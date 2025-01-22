@@ -13,7 +13,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PF_inter"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
+        <activity
+            android:name=".Contrasena"
+            android:exported="false" />
+        <activity
+            android:name=".Registro"
+            android:exported="false" />
         <activity
             android:name=".Modificar"
             android:exported="false" />
