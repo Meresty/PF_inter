@@ -89,7 +89,7 @@
     <TextView
         android:id="@+id/CambiarContraseña"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:text="@string/CambiarContrasena"
         android:gravity="center"
         android:paddingTop="1dp"
