@@ -19,7 +19,6 @@
         android:layout_marginTop="30dp"
         />
 
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -30,7 +29,6 @@
         android:fontFamily="sans-serif-condensed-medium"
         android:layout_marginTop="20dp"
         />
-
 
     <Button
         android:id="@+id/btnRegistro"
@@ -43,14 +41,12 @@
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="30dp"
-
         />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="2dp"
         android:background="@color/black"/>
-
 
     <TextView
         android:layout_width="wrap_content"
