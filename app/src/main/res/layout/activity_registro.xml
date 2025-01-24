@@ -95,6 +95,8 @@
         android:layout_height="wrap_content"
         android:text=""
         android:paddingTop="16dp"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        android:visibility="invisible"
+        />
 
 </LinearLayout>
