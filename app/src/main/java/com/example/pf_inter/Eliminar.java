@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,6 +23,7 @@ import global.info;
 public class Eliminar extends AppCompatActivity {
     RecyclerView rvE;
     Toolbar toolbar;
+    Button Eliminar_Boton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +32,7 @@ public class Eliminar extends AppCompatActivity {
         setContentView(R.layout.activity_eliminar);
 
         rvE = findViewById(R.id.recyclerViewEliminar);
+        Eliminar_Boton = findViewById(R.id.Boton_Elim);
 
         adaptadorEliminar adaptadorElim = new adaptadorEliminar(this);
         adaptadorElim.context = this;
@@ -47,18 +50,6 @@ public class Eliminar extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-    }
-
-    public void Eliminar_Boton(View view) {
-        for (int i = 0; i < info.listaEliminar.size(); i++)
-        {
-            nota unanota = info.listaEliminar.get(i);
-            info.lista.remove(unanota);
-            rvE.getAdapter().notifyDataSetChanged();
-
-        }
-
-
     }
 
 
@@ -94,5 +85,15 @@ public class Eliminar extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void Eliminar_Boton(View view) {
+        for (int i = 0; i < info.listaEliminar.size(); i++)
+        {
+            nota unanota = info.listaEliminar.get(i);
+            info.lista.remove(unanota);
+        }
+        info.listaEliminar.clear();
+        rvE.getAdapter().notifyDataSetChanged();
     }
 }

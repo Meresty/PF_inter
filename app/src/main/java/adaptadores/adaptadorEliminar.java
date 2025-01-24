@@ -10,16 +10,14 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.pf_inter.Eliminar;
 import com.example.pf_inter.R;
-
-import java.util.List;
 
 import POJO.nota;
 import global.info;
 
 public class adaptadorEliminar extends RecyclerView.Adapter<adaptadorEliminar.Mielimina> {
     public Context context;
+    private final String URL_API = "http://10.0.2.2/Eliminar_BD.php";
 
     public adaptadorEliminar(Context context){
         this.context = context;
@@ -36,18 +34,21 @@ public class adaptadorEliminar extends RecyclerView.Adapter<adaptadorEliminar.Mi
 
     @Override
     public void onBindViewHolder(@NonNull Mielimina holder, int position) {
-        nota notaActual = info.lista.get(position);
+        final int pos = position;
 
+        nota notaActual = info.lista.get(pos);
         holder.titulo.setText(notaActual.getTitulo());
         holder.checkBoxx.setChecked(false);
 
-        holder.checkBoxx.setOnClickListener(view -> {
-            if (holder.checkBoxx.isChecked()) {
-
-                info.lista.remove(position);
-                notifyItemRemoved(position);
-                notifyItemRangeChanged(position, info.lista.size());
-                Toast.makeText(context, "Elemento eliminado: " + notaActual.getTitulo(), Toast.LENGTH_SHORT).show();
+        holder.checkBoxx.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(((CheckBox)view).isChecked()){
+                    info.listaEliminar.add(info.lista.get(pos));
+                }
+                else{
+                    info.listaEliminar.remove(info.lista.get(pos));
+                }
             }
         });
     }
